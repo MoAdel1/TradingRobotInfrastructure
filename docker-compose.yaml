@@ -1,0 +1,26 @@
+version: '3.4'
+services:
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    ports:
+      - "10000:10000"
+      - "10001:10001"
+  azure_cli:
+    image: mcr.microsoft.com/azure-cli
+    environment:
+      AZURE_STORAGE_CONNECTION_STRING: BlobEndpoint=http://azurite:10000/devstoreaccount1;QueueEndpoint=http://azurite:10001/devstoreaccount1;DefaultEndpointsProtocol=https;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;
+    command: >
+            sh -c "az storage container create --name=test ; az storage queue create --name=test"
+    depends_on:
+      - azurite
+  postgres:
+    image: postgres:11
+    ports:
+    - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_DB: ilamo
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+volumes:
+  logvolume01: {}

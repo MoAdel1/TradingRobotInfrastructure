@@ -1,0 +1,10 @@
+{
+    "time_zone": "Europe/Berlin",
+    "database": {
+        "name": "datapipe",
+        "pass": "password",
+        "server": "localhost",
+        "user": "username",
+        "port": 5433
+    }
+}

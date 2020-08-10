@@ -1,0 +1,10 @@
+{
+    "time_zone": "#",
+    "database": {
+        "name": "#",
+        "pass": "#",
+        "server": "#",
+        "user": "#",
+        "port": 5432
+    }
+}
