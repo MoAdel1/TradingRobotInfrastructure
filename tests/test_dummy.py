@@ -1,8 +1,9 @@
-# code imports
+#%% code imports
 import pytest
 
-# define tests
-class TestDummy:
+#%% define tests
+'''
+class TestDummy():
 
 	def test_case1(self):
 		x=5
@@ -18,3 +19,4 @@ class TestDummy:
 		assert dummy_fixture[0] == 1
 		assert dummy_fixture[1] == 20
 		assert dummy_fixture[2] == 3
+'''

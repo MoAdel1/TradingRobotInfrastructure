@@ -1,7 +1,7 @@
 # code imports
+from os import getenv
 from pytz import timezone
 from datetime import datetime
-from ...services.configs.load_configs import get_configs
 
 
 # functions
@@ -13,8 +13,7 @@ def get_time() -> dict:
     output : dict
         a dictionary containing the value of time in datetime and string
     '''
-    configs = get_configs()
-    zone = configs['time_zone'] 
+    zone = getenv('TIME_ZONE') 
     tz = timezone(zone)
     time_now = datetime.now(tz)
     time_now_str = time_now.strftime('%d-%m-%Y %H:%M:%S')

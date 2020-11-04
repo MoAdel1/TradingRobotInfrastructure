@@ -2,8 +2,15 @@
     "IsEncrypted": false,
     "Values": {
       "FUNCTIONS_WORKER_RUNTIME": "python",
+      "AzureWebJobsStorage": "UseDevelopmentStorage=true",
       "FUNCTIONS_ENV": "local",
-      "AzureWebJobsStorage": "UseDevelopmentStorage=true"
+      "TIME_ZONE": "Europe/Berlin",
+      "DATABASE_NAME": "datapipe",
+      "DATABASE_PASS": "password",
+      "DATABASE_SERVER": "localhost",
+      "DATABASE_USER": "username",
+      "DATABASE_PORT": 5432,
+      "OANDA_TOKEN": "299f881cc549d9108cfe4dedd8ec9c30-513bd92a27964087d42778be23a268df"
     },
     "Host": {
       "LocalHttpPort": 7071

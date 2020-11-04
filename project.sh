@@ -4,6 +4,9 @@
 # for the function app to run the shell script must be runned within an environment that contains all the required dependencies. 
 # $ANACONDA=path where anaconda is installed locally
 
+# IMPORTANT NOTE: if using WSL some times connection to locahost is refused, just run 
+#                 [wsl --shutdown] in the power shell 
+
 # activate proper env
 source $ANACONDA/etc/profile.d/conda.sh
 
@@ -21,14 +24,14 @@ elif [ "$1" = "start" ]; then
     echo "Starting project locally"
     # start the database and needed storage account
     docker-compose build
-    gnome-terminal -- /bin/sh -c 'docker-compose up --force-recreate'
+    docker-compose up --force-recreate -d
     # wait for resource creation
     sleep 10
     # apply database migrations
     yoyo apply --database postgresql://username:password@localhost:5432/ilamo ./database/migrations --batch
     # start the function app
     cd function_app/
-    func host start
+    func host start --verbose
 elif [ "$1" = "stop" ]; then
     echo "Stopping project locally"
     docker-compose down
