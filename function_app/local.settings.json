@@ -10,7 +10,7 @@
       "DATABASE_SERVER": "localhost",
       "DATABASE_USER": "username",
       "DATABASE_PORT": 5432,
-      "OANDA_TOKEN": "299f881cc549d9108cfe4dedd8ec9c30-513bd92a27964087d42778be23a268df"
+      "OANDA_TOKEN": "###-###"
     },
     "Host": {
       "LocalHttpPort": 7071
