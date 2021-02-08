@@ -1,4 +1,4 @@
-# Datapipe 
+# TradingRobot 
 This repo is to deploy a financial markets trading robot inside a serverless Azure function. 
 
 It currently contains skeleton code for an azure function app including:
